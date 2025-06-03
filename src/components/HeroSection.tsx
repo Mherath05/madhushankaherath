@@ -96,7 +96,7 @@ const HeroSection = () => {
               
               {/* Profile Image */}
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                src="/lovable-uploads/3faa12a2-8768-4f7c-8d27-4e34738c1fd6.png" 
                 alt="H.M. Madhushanka Herath Kumara"
                 className="absolute inset-4 w-72 h-72 lg:w-88 lg:h-88 object-cover rounded-full border-4 border-gray-800 shadow-2xl"
               />
