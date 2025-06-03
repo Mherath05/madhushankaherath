@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Code, Zap } from "lucide-react";
-
 const HeroSection = () => {
-  return (
-    <section id="home" className="pt-20 min-h-screen flex items-center relative">
+  return <section id="home" className="pt-20 min-h-screen flex items-center relative">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-green-400/10 rounded-full blur-xl animate-pulse"></div>
@@ -80,26 +77,25 @@ const HeroSection = () => {
 
             {/* Tech Stack Preview */}
             <div className="flex flex-wrap gap-3 pt-4">
-              {["React", "Spring Boot", "Python", "MySQL"].map((tech, index) => (
-                <Badge key={index} variant="secondary" className="bg-gray-800/50 text-gray-300 border border-gray-700/50 px-3 py-1 backdrop-blur-sm hover:bg-gray-700/50 transition-colors">
+              {["React", "Spring Boot", "Python", "MySQL"].map((tech, index) => <Badge key={index} variant="secondary" className="bg-gray-800/50 text-gray-300 border border-gray-700/50 px-3 py-1 backdrop-blur-sm hover:bg-gray-700/50 transition-colors">
                   {tech}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
           </div>
           
           <div className="relative animate-fade-in delay-300">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto">
               {/* Glowing Ring */}
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-blue-400/20 to-purple-400/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-              <div className="absolute inset-2 bg-gradient-to-r from-purple-400/20 via-green-400/20 to-blue-400/20 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-blue-400/20 to-purple-400/20 rounded-full animate-spin" style={{
+              animationDuration: '20s'
+            }}></div>
+              <div className="absolute inset-2 bg-gradient-to-r from-purple-400/20 via-green-400/20 to-blue-400/20 rounded-full animate-spin" style={{
+              animationDuration: '15s',
+              animationDirection: 'reverse'
+            }}></div>
               
               {/* Profile Image */}
-              <img 
-                src="/lovable-uploads/3faa12a2-8768-4f7c-8d27-4e34738c1fd6.png" 
-                alt="H.M. Madhushanka Herath Kumara"
-                className="absolute inset-4 w-72 h-72 lg:w-88 lg:h-88 object-cover rounded-full border-4 border-gray-800 shadow-2xl"
-              />
+              <img src="/lovable-uploads/3faa12a2-8768-4f7c-8d27-4e34738c1fd6.png" alt="H.M. Madhushanka Herath Kumara" className="absolute inset-4 w-72 h-72 lg:w-88 lg:h-88 object-cover rounded-full border-4 border-gray-800 shadow-2xl" />
               
               {/* Floating Labels */}
               <div className="absolute -top-6 -right-6 bg-gradient-to-r from-green-400 to-emerald-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce delay-500">
@@ -108,15 +104,18 @@ const HeroSection = () => {
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-blue-400 to-cyan-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce delay-1000">
                 Full Stack Dev
               </div>
-              <div className="absolute top-1/2 -right-12 bg-gradient-to-r from-purple-400 to-pink-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce delay-700">
-                Problem Solver
-              </div>
+              <div className="absolute top-1/2 -right-12 bg-gradient-to-r from-purple-400 to-pink-400 text-black px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce delay-700">Software Dev</div>
               
               {/* Orbiting Elements */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '30s' }}>
+              <div className="absolute inset-0 animate-spin" style={{
+              animationDuration: '30s'
+            }}>
                 <div className="absolute -top-2 left-1/2 w-4 h-4 bg-green-400 rounded-full shadow-lg"></div>
               </div>
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }}>
+              <div className="absolute inset-0 animate-spin" style={{
+              animationDuration: '25s',
+              animationDirection: 'reverse'
+            }}>
                 <div className="absolute top-1/2 -right-2 w-3 h-3 bg-blue-400 rounded-full shadow-lg"></div>
               </div>
             </div>
@@ -130,8 +129,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
