@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +14,49 @@ const ContactSection = () => {
     email: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
+    setIsLoading(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_x82775v', // Service ID
+        'template_5xh528m', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Madhushanka', // You can customize this
+        },
+        'tFvc0aBWkGA6eElUm' // Public Key
+      );
+
+      if (result.status === 200) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. I'll get back to you soon!",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: ""
+        });
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -85,6 +125,7 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     className="bg-gray-700 border-gray-600 text-white"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -96,6 +137,7 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="bg-gray-700 border-gray-600 text-white"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -106,10 +148,15 @@ const ContactSection = () => {
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full min-h-[120px] p-3 bg-gray-700 border border-gray-600 rounded-md text-white resize-none"
                     required
+                    disabled={isLoading}
                   />
                 </div>
-                <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold">
-                  Send Message
+                <Button 
+                  type="submit" 
+                  className="w-full bg-green-500 hover:bg-green-600 text-black font-semibold"
+                  disabled={isLoading}
+                >
+                  {isLoading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
