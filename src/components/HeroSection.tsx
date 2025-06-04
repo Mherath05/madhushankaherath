@@ -2,17 +2,16 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Star, Code, Zap } from "lucide-react";
-
 const HeroSection = () => {
   const handleHireMeClick = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="pt-20 min-h-screen flex items-center relative">
+  return <section id="home" className="pt-20 min-h-screen flex items-center relative">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-green-400/10 rounded-full blur-xl animate-pulse"></div>
@@ -58,10 +57,7 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Button 
-                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-semibold px-8 py-4 rounded-full text-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 hover:scale-105"
-                onClick={handleHireMeClick}
-              >
+              <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-semibold px-8 py-4 rounded-full text-lg shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300 hover:scale-105" onClick={handleHireMeClick}>
                 Hire Me! <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
@@ -76,12 +72,10 @@ const HeroSection = () => {
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-500 border-2 border-gray-800 flex items-center justify-center">
                     <Star className="w-5 h-5 text-white" />
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-500 border-2 border-gray-800 flex items-center justify-center text-xs font-bold text-white">
-                    +1K
-                  </div>
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-500 border-2 border-gray-800 flex items-center justify-center text-xs font-bold text-white">+6</div>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-medium text-white">1K+ Projects</p>
+                  <p className="text-sm font-medium text-white">6+ Projects</p>
                   <p className="text-xs text-gray-400">Completed Successfully</p>
                 </div>
               </div>
@@ -141,8 +135,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
