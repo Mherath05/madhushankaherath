@@ -11,33 +11,44 @@ const ProjectsSection = () => {
       title: "E-Learning Website",
       description: "Platform to connect students with teachers",
       tech: ["Spring Boot", "React", "MySQL"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500&h=300&fit=crop",
+      githubUrl: null
     },
     {
       title: "Python Chatbot",
       description: "Helps automate computer tasks",
       tech: ["Python", "AI/ML"],
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop",
+      githubUrl: "https://github.com/Mherath05/Chat_Bot.git"
     },
     {
       title: "E-commerce Website",
       description: "Site for selling products",
       tech: ["WordPress", "PHP", "MySQL"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
+      githubUrl: null
     },
     {
       title: "Gaming Website",
       description: "Platform for downloading Android and PC games",
       tech: ["HTML", "CSS", "PHP", "MySQL"],
-      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&h=300&fit=crop",
+      githubUrl: "https://github.com/Mherath05/Gaming-Website.git"
     },
     {
       title: "Student Management System",
       description: "A mini project to manage student data",
       tech: ["HTML", "CSS", "PHP", "MySQL"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
+      githubUrl: "https://github.com/Mherath05/MH_Education.git"
     }
   ];
+
+  const handleProjectClick = (githubUrl: string | null) => {
+    if (githubUrl) {
+      window.open(githubUrl, '_blank');
+    }
+  };
 
   return (
     <section id="projects" className="py-20 bg-gray-800/50">
@@ -57,7 +68,12 @@ const ProjectsSection = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Button size="sm" className="bg-green-500 hover:bg-green-600">
+                  <Button 
+                    size="sm" 
+                    className="bg-green-500 hover:bg-green-600"
+                    onClick={() => handleProjectClick(project.githubUrl)}
+                    disabled={!project.githubUrl}
+                  >
                     <ExternalLink className="h-4 w-4" />
                   </Button>
                 </div>
