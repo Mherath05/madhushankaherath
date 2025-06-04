@@ -59,6 +59,14 @@ const ContactSection = () => {
     }
   };
 
+  const handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/madhushanka-herath-kumara-a4a294369', '_blank');
+  };
+
+  const handleGitHubClick = () => {
+    window.open('https://github.com/Mherath05', '_blank');
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-800/50">
       <div className="container mx-auto px-6">
@@ -102,10 +110,18 @@ const ContactSection = () => {
             </div>
             
             <div className="flex space-x-4">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+              <Button 
+                size="sm" 
+                className="bg-blue-600 hover:bg-blue-700"
+                onClick={handleLinkedInClick}
+              >
                 <Linkedin className="h-4 w-4" />
               </Button>
-              <Button size="sm" className="bg-gray-700 hover:bg-gray-600">
+              <Button 
+                size="sm" 
+                className="bg-gray-700 hover:bg-gray-600"
+                onClick={handleGitHubClick}
+              >
                 <Github className="h-4 w-4" />
               </Button>
             </div>
