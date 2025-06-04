@@ -37,7 +37,7 @@ const SkillsSection = () => {
           {skills.map((skill, index) => <Card key={index} className="bg-gray-800 border-gray-700 hover:border-green-400 transition-colors">
               <CardContent className="p-6">
                 <div className="space-y-3">
-                  <h3 className="font-semibold text-lg">{skill.name}</h3>
+                  <h3 className="font-semibold text-lg text-gray-50">{skill.name}</h3>
                   <div className="w-full bg-gray-700 rounded-full h-2">
                     <div style={{
                   width: `${skill.level}%`
