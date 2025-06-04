@@ -4,13 +4,8 @@ import { Download } from "lucide-react";
 
 const AboutSection = () => {
   const handleDownloadResume = () => {
-    // Create a link element and trigger download
-    const link = document.createElement('a');
-    link.href = '/cv.pdf'; // You'll need to upload your CV as cv.pdf in the public folder
-    link.download = 'Madhushanka_Herath_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open Google Drive link in a new tab
+    window.open('https://drive.google.com/file/d/1rJFi53LGPcEUhM1vJs6SgMc_HRWUbiEV/view?usp=sharing', '_blank');
   };
 
   return (
