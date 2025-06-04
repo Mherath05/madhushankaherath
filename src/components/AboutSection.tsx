@@ -1,17 +1,12 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 bg-gray-800/50">
+  return <section id="about" className="py-20 bg-gray-800/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            I'm an undergraduate at Rajarata University of Sri Lanka, passionate about becoming a software or web developer.
-          </p>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">I am an enthusiastic undergraduate reading for a B.Sc. (Hons.) in Information Systems at Rajarata University of Sri Lanka. I am seeking an IT-related internship to apply my academic knowledge in a real-world environment, strengthen my technical and analytical skills, and contribute meaningfully to a professional team. Passionate about areas such as software development, databases, and systems analysis, I am eager to gain hands-on experience and grow within the IT industry.</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -41,16 +36,10 @@ const AboutSection = () => {
           </div>
           
           <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" 
-              alt="Coding workspace"
-              className="rounded-lg shadow-2xl"
-            />
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Coding workspace" className="rounded-lg shadow-2xl" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
