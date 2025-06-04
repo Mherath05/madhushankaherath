@@ -1,8 +1,21 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+
 const AboutSection = () => {
-  return <section id="about" className="py-20 bg-gray-800/50">
+  const handleDownloadResume = () => {
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/cv.pdf'; // You'll need to upload your CV as cv.pdf in the public folder
+    link.download = 'Madhushanka_Herath_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <section id="about" className="py-20 bg-gray-800/50">
+      
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
@@ -29,7 +42,11 @@ const AboutSection = () => {
               </p>
             </div>
             
-            <Button variant="outline" className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black">
+            <Button 
+              variant="outline" 
+              className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
+              onClick={handleDownloadResume}
+            >
               <Download className="mr-2 h-4 w-4" />
               Download Resume
             </Button>
@@ -40,6 +57,8 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default AboutSection;
